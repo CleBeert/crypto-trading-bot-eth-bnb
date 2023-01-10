@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="lib/codemirror.js"></script>
+<script language="javascript" type="text/javascript" src="mode/perl/perl.js"></script>
+<script language="javascript" type="text/javascript" src="config.js"></script>
+<link rel="stylesheet" type="text/css" href="lib/codemirror.css"></link>
+<link rel="stylesheet" type="text/css" href="theme/darcula.css"></link>
+<link rel="stylesheet" href="fonts.css"></link>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+table, th, td {
+  border: 1px solid white;
+  text-color: white;
+}
+
+.main{
+  text-align: left;
+  padding: 20px;
+  color: black;
+  top: 15px;
+  margin: auto;
+  position: absolute;
+  background: black;
+  width:99%;
+  height:99%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: white;
+  border-radius: 25px;
+}
+html, body {
+    height: 100%;
+    background-color:black;
+}
+textarea
+{
+  width:100%;
+  background-color:#FFFF;
+
+}
+
+
+</style>
+
+</head>
+<body onload="VerifyAddress();">
+<div class="main" id="main" name="main" >
+<center><h1><font color=white >JavaScript DEX Triangular Arbitrage Bot v4</font></h1><br><table>
+  <tr>
+    <th><font color=white>  Start / Stop  </font></th>
+    <th><font color=white>Network Chain</font></th>
+    <th><font color=white>Wallet Bal:</font></th>
+    <th><font color=white>Max Spend</font></th>
+    <th><font color=white>Status:</font></th>
+    
+  </tr>
+  <tr>
+    <td ><input type="button" id="start" name="start" value="   Run Bot   " onClick="runbot();" ></td>
+    <td ><input type="text" id="network" name="network" value="" ></td>
+    <td ><input type="text" id="walletbal" name="walletbal" value="" ></td>
+    <td ><input type="text" id="maxspend" name="maxspend" value="" ></td>
+    <td ><input type="text" id="statusgo" name="statusgo" value="" ></td>
+  </tr>
+</table>
+</center>
+<textarea class="code" id="code" name="code" cols="40" rows="40"></textarea>
+<center><font size=5 color=White >Transactions & Error FeedBack:</font></center>
+<textarea class="code2" id="code2" name="code2" cols="5" rows="5"></textarea>
+</div>
+<script>
+var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+    lineNumbers: true,
+    mode: 'text/x-perl',
+    theme: 'darcula',
+    lineNumbers: true
+});
+editor.setOption('theme', 'darcula');
+</script>
+
+
+</body>
+</html>
